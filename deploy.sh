@@ -1,31 +1,27 @@
 #!/bin/bash
-# Miyukini Auto-Deploy — checks GitHub for changes, deploys if new
+# Miyukini Auto-Deploy — clones, builds Next.js, deploys static output
 REPO="StudioMiyukini/miyukini"
 BRANCH="main"
 DEPLOY_DIR="/var/www/portal"
 STATE_FILE="/var/www/.miyukini-last-sha"
 API_URL="https://api.github.com/repos/${REPO}/commits/${BRANCH}"
-RAW_BASE="https://raw.githubusercontent.com/${REPO}/${BRANCH}"
-
-FILES=(
-    "portal/index.html:index.html"
-    "portal/assets/style.css:assets/style.css"
-)
+TMP="/tmp/miyukini-build"
 
 LATEST_SHA=$(curl -sf -H "Accept: application/vnd.github.sha" "$API_URL")
 [ -z "$LATEST_SHA" ] && exit 0
+[ -f "$STATE_FILE" ] && [ "$(cat "$STATE_FILE")" = "$LATEST_SHA" ] && exit 0
 
-CURRENT_SHA=""
-[ -f "$STATE_FILE" ] && CURRENT_SHA=$(cat "$STATE_FILE")
-[ "$LATEST_SHA" = "$CURRENT_SHA" ] && exit 0
+echo "[$(date)] Building $LATEST_SHA..."
+rm -rf "$TMP"
+git clone --depth 1 -b "$BRANCH" "https://github.com/${REPO}.git" "$TMP" 2>/dev/null || exit 1
+cd "$TMP/site" || exit 1
+npm ci 2>/dev/null || exit 1
+npm run build 2>/dev/null || exit 1
+[ -d "out" ] || exit 1
 
-echo "[$(date)] Deploying $LATEST_SHA..."
-for ENTRY in "${FILES[@]}"; do
-    SRC="${ENTRY%%:*}"; DEST="${ENTRY##*:}"
-    mkdir -p "$(dirname "${DEPLOY_DIR}/${DEST}")"
-    curl -sf "$RAW_BASE/$SRC" -o "${DEPLOY_DIR}/${DEST}"
-done
-
+rm -rf "$DEPLOY_DIR"
+cp -r out "$DEPLOY_DIR"
 nginx -t 2>/dev/null && systemctl reload nginx 2>/dev/null
 echo "$LATEST_SHA" > "$STATE_FILE"
-echo "[$(date)] Done."
+echo "[$(date)] Deployed."
+rm -rf "$TMP"

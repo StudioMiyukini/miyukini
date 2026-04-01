@@ -3,172 +3,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miyukini — Studio & Digital Ecosystem</title>
-    <meta name="description" content="Miyukini Studio — Sovereign digital ecosystem. Explore our projects: COG, MIP, and more.">
+    <title>Miyukini — Studio & Écosystème Numérique Souverain</title>
+    <meta name="description" content="Studio Miyukini — Écosystèmes numériques souverains. COG, MIP, MiyukiniClaw et plus.">
+    <meta name="theme-color" content="#0a0a0f">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <div class="noise"></div>
+    <!-- Grain overlay -->
+    <div class="noise" aria-hidden="true"></div>
 
-    <header>
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <header id="header">
         <nav>
-            <a href="/" class="logo">
-                <span class="logo-symbol">&lt;/&gt;</span>
+            <a href="/" class="logo" aria-label="Miyukini Home">
+                <span class="logo-icon">&#x274B;</span>
                 <span class="logo-text">miyukini</span>
             </a>
             <div class="nav-links">
-                <a href="#projects">Projects</a>
-                <a href="#about">About</a>
-                <a href="https://github.com/StudioMiyukini" target="_blank" rel="noopener">GitHub</a>
+                <a href="#projets">Projets</a>
+                <a href="#parcours">Parcours</a>
+                <a href="#contact">Contact</a>
             </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
     </header>
 
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#projets">Projets</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#contact">Contact</a>
+    </div>
+
     <main>
+        <!-- ===== HERO ===== -->
         <section class="hero">
-            <div class="hero-content">
-                <p class="hero-tag">Studio Miyukini</p>
-                <h1>Building sovereign<br><span class="gradient-text">digital ecosystems</span></h1>
-                <p class="hero-desc">
-                    We craft tools and platforms that put ownership back in your hands.
-                    No clouds. No compromises. Your data, your rules.
+            <div class="hero-bg">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+                <div class="grid-overlay"></div>
+            </div>
+            <div class="hero-content reveal">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Écosystème actif — 6 projets
+                </div>
+                <h1>
+                    <span class="line">Architecte de</span>
+                    <span class="line"><span class="gradient-text text-glitch" data-text="souveraineté">souveraineté</span></span>
+                    <span class="line">numérique</span>
+                </h1>
+                <p class="hero-sub">
+                    Je conçois des outils et plateformes qui remettent la propriété
+                    entre vos mains. Pas de cloud. Pas de compromis.
                 </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">Explore Projects</a>
-                    <a href="https://github.com/StudioMiyukini" class="btn btn-ghost" target="_blank" rel="noopener">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        GitHub
+                <div class="hero-cta">
+                    <a href="#projets" class="btn-glow">
+                        <span>Découvrir les projets</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </a>
+                    <a href="#contact" class="btn-outline">Me contacter</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num" data-count="6">0</span>
+                        <span class="stat-label">Projets actifs</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num" data-count="8">0</span>
+                        <span class="stat-label">Cores COG</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">∞</span>
+                        <span class="stat-label">Souveraineté</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- ===== PRÉSENTATION ===== -->
+        <section id="presentation" class="section presentation">
+            <div class="container">
+                <div class="section-label reveal">
+                    <span class="label-line"></span>
+                    <span>À propos</span>
+                </div>
+                <div class="pres-grid">
+                    <div class="pres-text reveal">
+                        <h2>Studio <span class="gradient-text">Miyukini</span></h2>
+                        <p class="pres-lead">
+                            Un studio indépendant dédié à la création d'écosystèmes
+                            numériques souverains — où chaque utilisateur est maître de
+                            ses données, de son identité et de son environnement.
+                        </p>
+                        <p>
+                            De l'environnement de gouvernance orchestrée (COG) aux protocoles
+                            d'implémentation IA (MIP), en passant par les assistants personnels
+                            et les moteurs de jeu, chaque projet sert une mission unique :
+                        </p>
+                        <blockquote class="pres-quote">
+                            <span class="quote-mark">"</span>
+                            La souveraineté numérique pour tous.
+                        </blockquote>
+                    </div>
+                    <div class="pres-values reveal">
+                        <div class="value-card">
+                            <div class="value-icon">&#x1F512;</div>
+                            <h3>Offline-first</h3>
+                            <p>Tout fonctionne sans connexion. Le réseau est un bonus, pas une dépendance.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">&#x1F310;</div>
+                            <h3>Fédéré</h3>
+                            <p>Connectez votre COG au réseau Miyukini Webway — à vos conditions.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">&#x2699;</div>
+                            <h3>Open-source</h3>
+                            <p>Transparent, auditable, modifiable. Votre confiance est méritée, jamais imposée.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJETS (Bento Grid) ===== -->
+        <section id="projets" class="section projects">
+            <div class="container">
+                <div class="section-label reveal">
+                    <span class="label-line"></span>
+                    <span>Projets</span>
+                </div>
+                <h2 class="section-title reveal">Écosystème <span class="gradient-text">Miyukini</span></h2>
+
+                <div class="bento-grid">
+                    <!-- COG — grande carte flagship -->
+                    <a href="https://cog.miyukini.com" class="bento-card bento-featured reveal">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="card-top">
+                                <span class="card-tag tag-flagship">&#x2B50; Flagship</span>
+                                <span class="card-arrow">&nearr;</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>Miyukini COG</h3>
+                                <p class="card-subtitle">Cores Orchestrated Governance</p>
+                                <p>Un véritable espace de vie numérique souverain. Pas un logiciel, pas un cloud — votre environnement, vos règles.</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="tech-pills">
+                                    <span>Rust</span>
+                                    <span>Offline-first</span>
+                                    <span>8 Cores</span>
+                                    <span>Fédéré</span>
+                                </div>
+                                <span class="card-url">cog.miyukini.com</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- MIP -->
+                    <a href="https://github.com/StudioMiyukini/mip" target="_blank" rel="noopener" class="bento-card reveal">
+                        <div class="card-content">
+                            <div class="card-top">
+                                <span class="card-tag tag-protocol">&#x1F4DC; Protocole</span>
+                                <span class="card-arrow">&nearr;</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>MIP v2</h3>
+                                <p>Protocole d'implémentation universel gouverné par IA — 10 agents spécialisés, 7 phases, portes de qualité.</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="tech-pills">
+                                    <span>IA</span>
+                                    <span>DevOps</span>
+                                    <span>Gouvernance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- MiyukiniClaw -->
+                    <a href="https://github.com/StudioMiyukini/miyukiniclaw" target="_blank" rel="noopener" class="bento-card reveal">
+                        <div class="card-content">
+                            <div class="card-top">
+                                <span class="card-tag tag-ai">&#x1F99E; Assistant IA</span>
+                                <span class="card-arrow">&nearr;</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>MiyukiniClaw</h3>
+                                <p>Votre assistant IA personnel. Tous OS. Toutes plateformes. The lobster way.</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="tech-pills">
+                                    <span>TypeScript</span>
+                                    <span>Multi-plateforme</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Bevy COG -->
+                    <a href="https://github.com/StudioMiyukini/bevy-COG" target="_blank" rel="noopener" class="bento-card reveal">
+                        <div class="card-content">
+                            <div class="card-top">
+                                <span class="card-tag tag-engine">&#x1F3AE; Moteur</span>
+                                <span class="card-arrow">&nearr;</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>Bevy COG</h3>
+                                <p>Moteur de jeu data-driven en Rust, adapté pour l'écosystème COG.</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="tech-pills">
+                                    <span>Rust</span>
+                                    <span>ECS</span>
+                                    <span>Game Engine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- phpBB COG -->
+                    <a href="https://github.com/StudioMiyukini/phpbb-COG" target="_blank" rel="noopener" class="bento-card reveal">
+                        <div class="card-content">
+                            <div class="card-top">
+                                <span class="card-tag tag-community">&#x1F4AC; Communauté</span>
+                                <span class="card-arrow">&nearr;</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>phpBB COG</h3>
+                                <p>Forums communautaires taillés pour l'écosystème Miyukini.</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="tech-pills">
+                                    <span>PHP</span>
+                                    <span>Forum</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Catakana -->
+                    <a href="https://github.com/StudioMiyukini/catakana" target="_blank" rel="noopener" class="bento-card reveal">
+                        <div class="card-content">
+                            <div class="card-top">
+                                <span class="card-tag tag-tool">&#x1F3AF; Outil</span>
+                                <span class="card-arrow">&nearr;</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>Catakana</h3>
+                                <p>Un outil du studio — partie intégrante de l'écosystème Miyukini.</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="tech-pills">
+                                    <span>Utilitaire</span>
+                                </div>
+                            </div>
+                        </div>
                     </a>
                 </div>
             </div>
-            <div class="hero-grid">
-                <div class="grid-line"></div>
-                <div class="grid-line"></div>
-                <div class="grid-line"></div>
+        </section>
+
+        <!-- ===== PARCOURS / CV ===== -->
+        <section id="parcours" class="section cv">
+            <div class="container">
+                <div class="section-label reveal">
+                    <span class="label-line"></span>
+                    <span>Parcours</span>
+                </div>
+                <h2 class="section-title reveal">Compétences & <span class="gradient-text">Expérience</span></h2>
+
+                <div class="cv-grid">
+                    <div class="cv-skills reveal">
+                        <h3>Stack technique</h3>
+                        <div class="skill-groups">
+                            <div class="skill-group">
+                                <h4>Langages</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Rust</span>
+                                    <span class="skill-tag">TypeScript</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">PHP</span>
+                                    <span class="skill-tag">HTML/CSS</span>
+                                    <span class="skill-tag">SQL</span>
+                                </div>
+                            </div>
+                            <div class="skill-group">
+                                <h4>Domaines</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Architecture système</span>
+                                    <span class="skill-tag">IA & Agents</span>
+                                    <span class="skill-tag">Systèmes fédérés</span>
+                                    <span class="skill-tag">Game engines</span>
+                                    <span class="skill-tag">DevOps</span>
+                                    <span class="skill-tag">Sécurité</span>
+                                </div>
+                            </div>
+                            <div class="skill-group">
+                                <h4>Philosophie</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Offline-first</span>
+                                    <span class="skill-tag">Open-source</span>
+                                    <span class="skill-tag">Souveraineté</span>
+                                    <span class="skill-tag">Privacy by design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cv-timeline reveal">
+                        <h3>Expérience</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2024 — Présent</span>
+                                    <h4>Fondateur — Studio Miyukini</h4>
+                                    <p>Création de l'écosystème COG, du protocole MIP v2, et de l'ensemble des outils souverains.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Continu</span>
+                                    <h4>Développeur Full-Stack & Architecte système</h4>
+                                    <p>Conception de systèmes distribués, protocoles IA, et plateformes fédérées.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Open-source</span>
+                                    <h4>Contributeur & Mainteneur</h4>
+                                    <p>Forks et adaptations de Bevy, phpBB, OpenClaw pour l'écosystème COG.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="projects" class="projects">
-            <h2 class="section-title">Projects</h2>
-            <div class="project-grid">
+        <!-- ===== CONTACT & RÉSEAUX ===== -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="section-label reveal">
+                    <span class="label-line"></span>
+                    <span>Contact</span>
+                </div>
+                <h2 class="section-title reveal">Restons <span class="gradient-text">connectés</span></h2>
 
-                <a href="https://cog.miyukini.com" class="project-card featured">
-                    <div class="card-header">
-                        <span class="card-icon">&#x2699;</span>
-                        <span class="card-tag">Flagship</span>
-                    </div>
-                    <h3>Miyukini COG</h3>
-                    <p>Cores Orchestrated Governance — A sovereign digital environment. Not a software, not a cloud — a true digital living space that belongs to you.</p>
-                    <div class="card-tech">
-                        <span>Rust</span>
-                        <span>Offline-first</span>
-                        <span>Federated</span>
-                    </div>
-                    <span class="card-link">Visit cog.miyukini.com &rarr;</span>
-                </a>
+                <div class="contact-grid">
+                    <a href="https://github.com/StudioMiyukini" target="_blank" rel="noopener" class="social-card reveal">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <div>
+                            <h3>GitHub</h3>
+                            <p>@StudioMiyukini</p>
+                        </div>
+                        <span class="social-arrow">&nearr;</span>
+                    </a>
 
-                <a href="https://github.com/StudioMiyukini/mip" class="project-card" target="_blank" rel="noopener">
-                    <div class="card-header">
-                        <span class="card-icon">&#x1F4DC;</span>
-                        <span class="card-tag">Protocol</span>
-                    </div>
-                    <h3>MIP v2</h3>
-                    <p>Miyukini Implementation Protocol — Universal AI-governed development protocol with 10 specialized agents, 7 phases, and quality gates.</p>
-                    <div class="card-tech">
-                        <span>AI Agents</span>
-                        <span>DevOps</span>
-                        <span>Governance</span>
-                    </div>
-                    <span class="card-link">View on GitHub &rarr;</span>
-                </a>
+                    <a href="https://discord.gg/miyukini" target="_blank" rel="noopener" class="social-card reveal">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.947 2.418-2.157 2.418z"/></svg>
+                        <div>
+                            <h3>Discord</h3>
+                            <p>Communauté Miyukini</p>
+                        </div>
+                        <span class="social-arrow">&nearr;</span>
+                    </a>
 
-                <a href="https://github.com/StudioMiyukini/miyukiniclaw" class="project-card" target="_blank" rel="noopener">
-                    <div class="card-header">
-                        <span class="card-icon">&#x1F99E;</span>
-                        <span class="card-tag">AI Assistant</span>
-                    </div>
-                    <h3>MiyukiniClaw</h3>
-                    <p>Your own personal AI assistant. Any OS. Any Platform. The lobster way.</p>
-                    <div class="card-tech">
-                        <span>TypeScript</span>
-                        <span>Cross-platform</span>
-                    </div>
-                    <span class="card-link">View on GitHub &rarr;</span>
-                </a>
+                    <a href="https://cog.miyukini.com" class="social-card reveal">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <div>
+                            <h3>COG Platform</h3>
+                            <p>cog.miyukini.com</p>
+                        </div>
+                        <span class="social-arrow">&nearr;</span>
+                    </a>
 
-                <a href="https://github.com/StudioMiyukini/bevy-COG" class="project-card" target="_blank" rel="noopener">
-                    <div class="card-header">
-                        <span class="card-icon">&#x1F3AE;</span>
-                        <span class="card-tag">Engine</span>
-                    </div>
-                    <h3>Bevy COG</h3>
-                    <p>A refreshingly simple data-driven game engine built in Rust, adapted for the Miyukini COG ecosystem.</p>
-                    <div class="card-tech">
-                        <span>Rust</span>
-                        <span>Game Engine</span>
-                        <span>ECS</span>
-                    </div>
-                    <span class="card-link">View on GitHub &rarr;</span>
-                </a>
-
-                <a href="https://github.com/StudioMiyukini/phpbb-COG" class="project-card" target="_blank" rel="noopener">
-                    <div class="card-header">
-                        <span class="card-icon">&#x1F4AC;</span>
-                        <span class="card-tag">Community</span>
-                    </div>
-                    <h3>phpBB COG</h3>
-                    <p>Community forums powered by phpBB, tailored for the Miyukini COG community.</p>
-                    <div class="card-tech">
-                        <span>PHP</span>
-                        <span>Forum</span>
-                    </div>
-                    <span class="card-link">View on GitHub &rarr;</span>
-                </a>
-
-                <a href="https://github.com/StudioMiyukini/catakana" class="project-card" target="_blank" rel="noopener">
-                    <div class="card-header">
-                        <span class="card-icon">&#x1F3AF;</span>
-                        <span class="card-tag">Tool</span>
-                    </div>
-                    <h3>Catakana</h3>
-                    <p>A Miyukini Studio project — part of the broader ecosystem.</p>
-                    <div class="card-tech">
-                        <span>Utility</span>
-                    </div>
-                    <span class="card-link">View on GitHub &rarr;</span>
-                </a>
-
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="about-content">
-                <h2 class="section-title">About Studio Miyukini</h2>
-                <p>
-                    We believe in a future where your digital life is truly yours.
-                    Studio Miyukini builds sovereign tools and ecosystems that operate
-                    offline-first, respect your privacy, and federate on your terms.
-                </p>
-                <p>
-                    From operating environments to AI protocols, every project
-                    we build serves one mission: <strong>digital sovereignty for everyone</strong>.
-                </p>
-                <div class="about-links">
-                    <a href="https://github.com/StudioMiyukini" target="_blank" rel="noopener">GitHub</a>
-                    <a href="https://cog.miyukini.com" target="_blank" rel="noopener">COG Platform</a>
+                    <a href="mailto:contact@miyukini.com" class="social-card reveal">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contact@miyukini.com</p>
+                        </div>
+                        <span class="social-arrow">&nearr;</span>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Studio Miyukini. All rights reserved.</p>
-            <p class="footer-tagline">Sovereignty by design.</p>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <span class="logo-icon">&#x274B;</span>
+                <span>Studio Miyukini</span>
+            </div>
+            <p class="footer-tagline">Souveraineté par design.</p>
+            <p class="footer-copy">&copy; 2026 — Tous droits réservés.</p>
         </div>
     </footer>
+
+    <script src="assets/main.js"></script>
 </body>
 </html>

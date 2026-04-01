@@ -1,0 +1,8 @@
+node_modules/
+.next/
+out/
+portal-app-src/public/next.svg
+portal-app-src/public/vercel.svg
+portal-app-src/public/file.svg
+portal-app-src/public/globe.svg
+portal-app-src/public/window.svg

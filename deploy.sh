@@ -1,7 +1,7 @@
 #!/bin/bash
 # =============================================================
-# Miyukini Auto-Deploy — checks GitHub for changes, deploys if new
-# Runs via cron every minute. Only downloads when commit SHA changes.
+# Miyukini Auto-Deploy — clones repo, builds Next.js, deploys
+# Runs via cron every minute. Only builds when commit SHA changes.
 # =============================================================
 
 REPO="StudioMiyukini/miyukini"
@@ -9,20 +9,13 @@ BRANCH="main"
 DEPLOY_DIR="/var/www/portal"
 STATE_FILE="/var/www/.miyukini-last-sha"
 API_URL="https://api.github.com/repos/${REPO}/commits/${BRANCH}"
-RAW_BASE="https://raw.githubusercontent.com/${REPO}/${BRANCH}"
-
-# Files to deploy
-FILES=(
-    "portal/index.html:index.html"
-    "portal/assets/style.css:assets/style.css"
-    "portal/assets/main.js:assets/main.js"
-)
+TMP_DIR="/tmp/miyukini-build"
 
 # Get latest commit SHA
 LATEST_SHA=$(curl -sf -H "Accept: application/vnd.github.sha" "$API_URL")
 
 if [ -z "$LATEST_SHA" ]; then
-    exit 0  # API error, skip
+    exit 0
 fi
 
 # Compare with last deployed SHA
@@ -32,23 +25,41 @@ if [ -f "$STATE_FILE" ]; then
 fi
 
 if [ "$LATEST_SHA" = "$CURRENT_SHA" ]; then
-    exit 0  # No changes
+    exit 0
 fi
 
-# Deploy new files
-echo "[$(date)] Deploying $LATEST_SHA..."
+echo "[$(date)] New commit $LATEST_SHA — building..."
 
-for ENTRY in "${FILES[@]}"; do
-    SRC="${ENTRY%%:*}"
-    DEST="${ENTRY##*:}"
-    DEST_PATH="${DEPLOY_DIR}/${DEST}"
-    mkdir -p "$(dirname "$DEST_PATH")"
-    curl -sf "$RAW_BASE/$SRC" -o "$DEST_PATH"
-done
+# Clone, install, build
+rm -rf "$TMP_DIR"
+git clone --depth 1 -b "$BRANCH" "https://github.com/${REPO}.git" "$TMP_DIR" 2>/dev/null
 
-# Reload nginx (only if config changed)
+if [ ! -d "$TMP_DIR/portal-app-src" ]; then
+    echo "[$(date)] ERROR: portal-app-src not found"
+    rm -rf "$TMP_DIR"
+    exit 1
+fi
+
+cd "$TMP_DIR/portal-app-src"
+npm ci --production=false 2>/dev/null
+npm run build 2>/dev/null
+
+if [ ! -d "out" ]; then
+    echo "[$(date)] ERROR: build failed"
+    rm -rf "$TMP_DIR"
+    exit 1
+fi
+
+# Deploy
+rm -rf "$DEPLOY_DIR"
+cp -r out "$DEPLOY_DIR"
+
+# Reload nginx
 nginx -t 2>/dev/null && systemctl reload nginx 2>/dev/null
 
-# Save new SHA
+# Save SHA
 echo "$LATEST_SHA" > "$STATE_FILE"
 echo "[$(date)] Deployed $LATEST_SHA successfully."
+
+# Cleanup
+rm -rf "$TMP_DIR"

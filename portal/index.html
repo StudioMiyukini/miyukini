@@ -3,488 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miyukini — Studio & Écosystème Numérique Souverain</title>
-    <meta name="description" content="Studio Miyukini — Écosystèmes numériques souverains. COG, MIP, MiyukiniClaw et plus.">
+    <title>Van Jean NGUYEN — Studio Miyukini</title>
+    <meta name="description" content="Studio Miyukini — Édition, écosystèmes numériques souverains, culture japonaise.">
     <meta name="theme-color" content="#0a0a0f">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <!-- Grain overlay -->
-    <div class="noise" aria-hidden="true"></div>
 
-    <!-- Cursor glow -->
-    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
-
-    <!-- Navigation -->
-    <header id="header">
-        <nav>
-            <a href="/" class="logo" aria-label="Miyukini Home">
-                <span class="logo-icon">&#x274B;</span>
-                <span class="logo-text">miyukini</span>
-            </a>
-            <div class="nav-links">
-                <a href="#projets">Projets</a>
-                <a href="#parcours">Parcours</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
-        </nav>
-    </header>
-
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#projets">Projets</a>
-        <a href="#parcours">Parcours</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <main>
-        <!-- ===== HERO ===== -->
-        <section class="hero">
-            <div class="hero-bg">
-                <div class="orb orb-1"></div>
-                <div class="orb orb-2"></div>
-                <div class="orb orb-3"></div>
-                <div class="grid-overlay"></div>
-            </div>
-            <div class="hero-content reveal">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    Écosystème actif — 6 projets
-                </div>
-                <h1>
-                    <span class="line">Van Jean <span class="gradient-text text-glitch" data-text="NGUYEN">NGUYEN</span></span>
-                    <span class="line" style="font-size:0.5em;color:var(--text-muted);letter-spacing:0.02em">Directeur — Studio Miyukini</span>
-                </h1>
-                <p class="hero-sub">
-                    Aventurier dans l'âme, passionné de manga et de tech. Je fonde, je construis,
-                    je transmets. Du service militaire à la souveraineté numérique — toujours en mouvement.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projets" class="btn-glow">
-                        <span>Découvrir les projets</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                    </a>
-                    <a href="#contact" class="btn-outline">Me contacter</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-num" data-count="7">0</span>
-                        <span class="stat-label">Ans de studio</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-num" data-count="6">0</span>
-                        <span class="stat-label">Projets actifs</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-num" data-count="3">0</span>
-                        <span class="stat-label">Langues</span>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-indicator" aria-hidden="true">
-                <div class="scroll-line"></div>
-            </div>
-        </section>
-
-        <!-- ===== PRÉSENTATION ===== -->
-        <section id="presentation" class="section presentation">
-            <div class="container">
-                <div class="section-label reveal">
-                    <span class="label-line"></span>
-                    <span>À propos</span>
-                </div>
-                <div class="pres-grid">
-                    <div class="pres-text reveal">
-                        <h2>Studio <span class="gradient-text">Miyukini</span></h2>
-                        <p class="pres-lead">
-                            Fondé en 2018 à Toulouse, le Studio Miyukini est né d'une passion
-                            pour la BD japonaise et d'une vision : créer des écosystèmes
-                            numériques où chacun est maître de ses données.
-                        </p>
-                        <p>
-                            Dynamique et pro-actif, aventurier dans l'âme — j'ai cumulé les
-                            expériences, des drapeaux au studio d'édition. Aujourd'hui, de la
-                            gouvernance orchestrée (COG) aux protocoles IA (MIP), chaque projet
-                            sert une mission :
-                        </p>
-                        <blockquote class="pres-quote">
-                            <span class="quote-mark">"</span>
-                            Transmettre, soutenir, et bâtir la souveraineté numérique pour tous.
-                        </blockquote>
-                    </div>
-                    <div class="pres-values reveal">
-                        <div class="value-card">
-                            <div class="value-icon">&#x1F512;</div>
-                            <h3>Offline-first</h3>
-                            <p>Tout fonctionne sans connexion. Le réseau est un bonus, pas une dépendance.</p>
-                        </div>
-                        <div class="value-card">
-                            <div class="value-icon">&#x1F310;</div>
-                            <h3>Fédéré</h3>
-                            <p>Connectez votre COG au réseau Miyukini Webway — à vos conditions.</p>
-                        </div>
-                        <div class="value-card">
-                            <div class="value-icon">&#x2699;</div>
-                            <h3>Open-source</h3>
-                            <p>Transparent, auditable, modifiable. Votre confiance est méritée, jamais imposée.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== PROJETS (Bento Grid) ===== -->
-        <section id="projets" class="section projects">
-            <div class="container">
-                <div class="section-label reveal">
-                    <span class="label-line"></span>
-                    <span>Projets</span>
-                </div>
-                <h2 class="section-title reveal">Écosystème <span class="gradient-text">Miyukini</span></h2>
-
-                <div class="bento-grid">
-                    <!-- COG — grande carte flagship -->
-                    <a href="https://cog.miyukini.com" class="bento-card bento-featured reveal">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <div class="card-top">
-                                <span class="card-tag tag-flagship">&#x2B50; Flagship</span>
-                                <span class="card-arrow">&nearr;</span>
-                            </div>
-                            <div class="card-body">
-                                <h3>Miyukini COG</h3>
-                                <p class="card-subtitle">Cores Orchestrated Governance</p>
-                                <p>Un véritable espace de vie numérique souverain. Pas un logiciel, pas un cloud — votre environnement, vos règles.</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="tech-pills">
-                                    <span>Rust</span>
-                                    <span>Offline-first</span>
-                                    <span>8 Cores</span>
-                                    <span>Fédéré</span>
-                                </div>
-                                <span class="card-url">cog.miyukini.com</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- MIP -->
-                    <a href="https://github.com/StudioMiyukini/mip" target="_blank" rel="noopener" class="bento-card reveal">
-                        <div class="card-content">
-                            <div class="card-top">
-                                <span class="card-tag tag-protocol">&#x1F4DC; Protocole</span>
-                                <span class="card-arrow">&nearr;</span>
-                            </div>
-                            <div class="card-body">
-                                <h3>MIP v2</h3>
-                                <p>Protocole d'implémentation universel gouverné par IA — 10 agents spécialisés, 7 phases, portes de qualité.</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="tech-pills">
-                                    <span>IA</span>
-                                    <span>DevOps</span>
-                                    <span>Gouvernance</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- MiyukiniClaw -->
-                    <a href="https://github.com/StudioMiyukini/miyukiniclaw" target="_blank" rel="noopener" class="bento-card reveal">
-                        <div class="card-content">
-                            <div class="card-top">
-                                <span class="card-tag tag-ai">&#x1F99E; Assistant IA</span>
-                                <span class="card-arrow">&nearr;</span>
-                            </div>
-                            <div class="card-body">
-                                <h3>MiyukiniClaw</h3>
-                                <p>Votre assistant IA personnel. Tous OS. Toutes plateformes. The lobster way.</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="tech-pills">
-                                    <span>TypeScript</span>
-                                    <span>Multi-plateforme</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Bevy COG -->
-                    <a href="https://github.com/StudioMiyukini/bevy-COG" target="_blank" rel="noopener" class="bento-card reveal">
-                        <div class="card-content">
-                            <div class="card-top">
-                                <span class="card-tag tag-engine">&#x1F3AE; Moteur</span>
-                                <span class="card-arrow">&nearr;</span>
-                            </div>
-                            <div class="card-body">
-                                <h3>Bevy COG</h3>
-                                <p>Moteur de jeu data-driven en Rust, adapté pour l'écosystème COG.</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="tech-pills">
-                                    <span>Rust</span>
-                                    <span>ECS</span>
-                                    <span>Game Engine</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- phpBB COG -->
-                    <a href="https://github.com/StudioMiyukini/phpbb-COG" target="_blank" rel="noopener" class="bento-card reveal">
-                        <div class="card-content">
-                            <div class="card-top">
-                                <span class="card-tag tag-community">&#x1F4AC; Communauté</span>
-                                <span class="card-arrow">&nearr;</span>
-                            </div>
-                            <div class="card-body">
-                                <h3>phpBB COG</h3>
-                                <p>Forums communautaires taillés pour l'écosystème Miyukini.</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="tech-pills">
-                                    <span>PHP</span>
-                                    <span>Forum</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Catakana -->
-                    <a href="https://catakana.fr" target="_blank" rel="noopener" class="bento-card reveal">
-                        <div class="card-content">
-                            <div class="card-top">
-                                <span class="card-tag tag-community">&#x1F38A; Festival</span>
-                                <span class="card-arrow">&nearr;</span>
-                            </div>
-                            <div class="card-body">
-                                <h3>Catakana</h3>
-                                <p>Festival dédié à la culture japonaise et au manga — fondé et présidé depuis 2024.</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="tech-pills">
-                                    <span>Événementiel</span>
-                                    <span>Culture japonaise</span>
-                                    <span>Manga</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== PARCOURS / CV ===== -->
-        <section id="parcours" class="section cv">
-            <div class="container">
-                <div class="section-label reveal">
-                    <span class="label-line"></span>
-                    <span>Parcours</span>
-                </div>
-                <h2 class="section-title reveal">Compétences & <span class="gradient-text">Expérience</span></h2>
-
-                <div class="cv-grid">
-                    <div class="cv-skills reveal">
-                        <h3>Compétences</h3>
-                        <div class="skill-groups">
-                            <div class="skill-group">
-                                <h4>Direction & Management</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Direction artistique</span>
-                                    <span class="skill-tag">Gestion de projet</span>
-                                    <span class="skill-tag">Gestion d'équipe</span>
-                                    <span class="skill-tag">Ressources humaines</span>
-                                    <span class="skill-tag">Comptabilité</span>
-                                </div>
-                            </div>
-                            <div class="skill-group">
-                                <h4>Création & Tech</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Illustration</span>
-                                    <span class="skill-tag">Illustration numérique</span>
-                                    <span class="skill-tag">Bande dessinée</span>
-                                    <span class="skill-tag">Édition</span>
-                                    <span class="skill-tag">Logiciel de création graphique</span>
-                                    <span class="skill-tag">Développement produit</span>
-                                </div>
-                            </div>
-                            <div class="skill-group">
-                                <h4>Commerce & Marketing</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Marketing produit</span>
-                                    <span class="skill-tag">B2C</span>
-                                    <span class="skill-tag">Commerce de détail</span>
-                                    <span class="skill-tag">Salons professionnels</span>
-                                    <span class="skill-tag">Gestion des stocks</span>
-                                </div>
-                            </div>
-                            <div class="skill-group">
-                                <h4>Langues</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Français</span>
-                                    <span class="skill-tag">Anglais</span>
-                                    <span class="skill-tag">Vietnamien</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cv-timeline reveal">
-                        <h3>Expérience</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <span class="timeline-date">Juil. 2018 — Présent</span>
-                                    <h4>Directeur-fondateur — Studio Miyukini</h4>
-                                    <p>Édition de livres et de bandes dessinées. Création de l'écosystème numérique COG, du protocole MIP v2, et des outils souverains. Toulouse et périphérie.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <span class="timeline-date">2024 — Présent</span>
-                                    <h4>Fondateur & Président — Festival Catakana</h4>
-                                    <p>Création et présidence d'un festival dédié à la culture japonaise et au manga.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <span class="timeline-date">Mai 2020 — Janv. 2022</span>
-                                    <h4>Fondateur — Virtual Market FR</h4>
-                                    <p>Création et gestion d'un marché virtuel français.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <span class="timeline-date">Avr. 2021 — Avr. 2022</span>
-                                    <h4>Directeur de restaurant — La Table d'Argent</h4>
-                                    <p>Direction d'un établissement de restauration à Léguevin, Occitanie.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <span class="timeline-date">7 ans de service</span>
-                                    <h4>Service militaire</h4>
-                                    <p>7 années sous les drapeaux — découverte de compétences et de savoir-être précieux.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 style="margin-top:2rem">Formation</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <span class="timeline-date">2011 — 2012</span>
-                                    <h4>CNAM-IPST Toulouse</h4>
-                                    <p>BAC Science</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <span class="timeline-date">2005 — 2007</span>
-                                    <h4>Studio M — Art and Multimedia School</h4>
-                                    <p>CRM Art et Infographie</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <span class="timeline-date">2004 — 2005</span>
-                                    <h4>Lycée Gabriel Péri</h4>
-                                    <p>BEP Vente Action Marchande — Commerce</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== CONTACT & RÉSEAUX ===== -->
-        <section id="contact" class="section contact">
-            <div class="container">
-                <div class="section-label reveal">
-                    <span class="label-line"></span>
-                    <span>Contact</span>
-                </div>
-                <h2 class="section-title reveal">Restons <span class="gradient-text">connectés</span></h2>
-
-                <div class="contact-grid">
-                    <a href="https://www.linkedin.com/in/van-jean-nguyen/" target="_blank" rel="noopener" class="social-card reveal">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        <div>
-                            <h3>LinkedIn</h3>
-                            <p>Van Jean NGUYEN</p>
-                        </div>
-                        <span class="social-arrow">&nearr;</span>
-                    </a>
-
-                    <a href="https://github.com/StudioMiyukini" target="_blank" rel="noopener" class="social-card reveal">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        <div>
-                            <h3>GitHub</h3>
-                            <p>@StudioMiyukini</p>
-                        </div>
-                        <span class="social-arrow">&nearr;</span>
-                    </a>
-
-                    <a href="https://discord.gg/miyukini" target="_blank" rel="noopener" class="social-card reveal">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.947 2.418-2.157 2.418z"/></svg>
-                        <div>
-                            <h3>Discord</h3>
-                            <p>Communauté Miyukini</p>
-                        </div>
-                        <span class="social-arrow">&nearr;</span>
-                    </a>
-
-                    <a href="https://cog.miyukini.com" class="social-card reveal">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                        <div>
-                            <h3>COG Platform</h3>
-                            <p>cog.miyukini.com</p>
-                        </div>
-                        <span class="social-arrow">&nearr;</span>
-                    </a>
-
-                    <a href="mailto:contact@miyukini.com" class="social-card reveal">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                        <div>
-                            <h3>Email</h3>
-                            <p>contact@miyukini.com</p>
-                        </div>
-                        <span class="social-arrow">&nearr;</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-left">
-                <span class="logo-icon">&#x274B;</span>
-                <span>Studio Miyukini</span>
-            </div>
-            <p class="footer-tagline">Souveraineté par design.</p>
-            <p class="footer-copy">&copy; 2026 — Tous droits réservés.</p>
+    <!-- Nav -->
+    <nav>
+        <a href="#" class="nav-logo">miyukini</a>
+        <div class="nav-right">
+            <a href="#projets">Projets</a>
+            <a href="#parcours">Parcours</a>
+            <a href="#contact">Contact</a>
         </div>
+    </nav>
+
+    <!-- Intro -->
+    <section class="intro">
+        <p class="intro-label">Studio Miyukini — Toulouse, France</p>
+        <h1>Van Jean NGUYEN</h1>
+        <p class="intro-role">Fondateur &amp; directeur du Studio Miyukini.<br>Édition manga, écosystèmes numériques souverains, culture japonaise.</p>
+        <div class="intro-links">
+            <a href="https://github.com/StudioMiyukini" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/van-jean-nguyen/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://discord.gg/miyukini" target="_blank" rel="noopener">Discord</a>
+            <a href="mailto:contact@miyukini.com">Email</a>
+        </div>
+    </section>
+
+    <hr class="sep">
+
+    <!-- À propos -->
+    <section class="about">
+        <div class="about-text">
+            <p>Aventurier dans l'âme, passionné de BD japonaise depuis toujours. J'ai servi 7 ans sous les drapeaux, dirigé un restaurant, fondé un marché virtuel, et créé le Studio Miyukini pour y faire mûrir des talents et des projets.</p>
+            <p>Aujourd'hui je construis des outils numériques souverains — où chaque utilisateur est maître de ses données. Pas de cloud, pas de compromis.</p>
+        </div>
+        <div class="about-nums">
+            <div class="num"><strong>7+</strong><span>ans de studio</span></div>
+            <div class="num"><strong>6</strong><span>projets actifs</span></div>
+            <div class="num"><strong>3</strong><span>langues</span></div>
+        </div>
+    </section>
+
+    <hr class="sep">
+
+    <!-- Projets -->
+    <section id="projets" class="projets">
+        <h2>Projets</h2>
+
+        <a href="https://cog.miyukini.com" class="projet flagship">
+            <div class="projet-head">
+                <span class="projet-tag">Flagship</span>
+                <span class="arrow">&nearr;</span>
+            </div>
+            <h3>Miyukini COG</h3>
+            <p>Cores Orchestrated Governance — Un espace de vie numérique souverain. Pas un logiciel, pas un cloud. Votre environnement, vos règles.</p>
+            <div class="projet-tech">Rust &middot; Offline-first &middot; 8 Cores &middot; Fédéré</div>
+        </a>
+
+        <div class="projet-grid">
+            <a href="https://github.com/StudioMiyukini/mip" target="_blank" rel="noopener" class="projet">
+                <div class="projet-head">
+                    <span class="projet-tag">Protocole</span>
+                    <span class="arrow">&nearr;</span>
+                </div>
+                <h3>MIP v2</h3>
+                <p>Protocole de développement gouverné par IA — 10 agents, 7 phases, portes de qualité.</p>
+                <div class="projet-tech">IA &middot; DevOps &middot; Gouvernance</div>
+            </a>
+
+            <a href="https://github.com/StudioMiyukini/miyukiniclaw" target="_blank" rel="noopener" class="projet">
+                <div class="projet-head">
+                    <span class="projet-tag">Assistant IA</span>
+                    <span class="arrow">&nearr;</span>
+                </div>
+                <h3>MiyukiniClaw</h3>
+                <p>Votre assistant IA personnel. Tous OS, toutes plateformes.</p>
+                <div class="projet-tech">TypeScript &middot; Multi-plateforme</div>
+            </a>
+
+            <a href="https://github.com/StudioMiyukini/bevy-COG" target="_blank" rel="noopener" class="projet">
+                <div class="projet-head">
+                    <span class="projet-tag">Moteur</span>
+                    <span class="arrow">&nearr;</span>
+                </div>
+                <h3>Bevy COG</h3>
+                <p>Moteur de jeu data-driven en Rust, adapté pour l'écosystème COG.</p>
+                <div class="projet-tech">Rust &middot; ECS &middot; Game Engine</div>
+            </a>
+
+            <a href="https://github.com/StudioMiyukini/phpbb-COG" target="_blank" rel="noopener" class="projet">
+                <div class="projet-head">
+                    <span class="projet-tag">Communauté</span>
+                    <span class="arrow">&nearr;</span>
+                </div>
+                <h3>phpBB COG</h3>
+                <p>Forums communautaires pour l'écosystème Miyukini.</p>
+                <div class="projet-tech">PHP &middot; Forum</div>
+            </a>
+
+            <a href="https://catakana.fr" target="_blank" rel="noopener" class="projet">
+                <div class="projet-head">
+                    <span class="projet-tag">Festival</span>
+                    <span class="arrow">&nearr;</span>
+                </div>
+                <h3>Catakana</h3>
+                <p>Festival dédié à la culture japonaise et au manga.</p>
+                <div class="projet-tech">Événementiel &middot; Culture JP</div>
+            </a>
+        </div>
+    </section>
+
+    <hr class="sep">
+
+    <!-- Parcours -->
+    <section id="parcours" class="parcours">
+        <h2>Parcours</h2>
+
+        <div class="parcours-cols">
+            <div class="parcours-col">
+                <h3>Expérience</h3>
+                <div class="entry">
+                    <span class="date">2018 — Présent</span>
+                    <strong>Directeur-fondateur, Studio Miyukini</strong>
+                    <p>Édition manga et BD. Création de l'écosystème numérique COG.</p>
+                </div>
+                <div class="entry">
+                    <span class="date">2024 — Présent</span>
+                    <strong>Président, Festival Catakana</strong>
+                    <p>Création d'un festival culture japonaise.</p>
+                </div>
+                <div class="entry">
+                    <span class="date">2020 — 2022</span>
+                    <strong>Fondateur, Virtual Market FR</strong>
+                    <p>Marché virtuel français.</p>
+                </div>
+                <div class="entry">
+                    <span class="date">2021 — 2022</span>
+                    <strong>Directeur, La Table d'Argent</strong>
+                    <p>Restaurant à Léguevin, Occitanie.</p>
+                </div>
+                <div class="entry">
+                    <span class="date">7 ans</span>
+                    <strong>Service militaire</strong>
+                    <p>Compétences de terrain, discipline, leadership.</p>
+                </div>
+            </div>
+
+            <div class="parcours-col">
+                <h3>Formation</h3>
+                <div class="entry">
+                    <span class="date">2011 — 2012</span>
+                    <strong>CNAM-IPST Toulouse</strong>
+                    <p>BAC Science</p>
+                </div>
+                <div class="entry">
+                    <span class="date">2005 — 2007</span>
+                    <strong>Studio M — École Art &amp; Multimédia</strong>
+                    <p>CRM Art et Infographie</p>
+                </div>
+                <div class="entry">
+                    <span class="date">2004 — 2005</span>
+                    <strong>Lycée Gabriel Péri</strong>
+                    <p>BEP Vente Action Marchande</p>
+                </div>
+
+                <h3 class="mt">Compétences</h3>
+                <div class="tags">
+                    <span>Direction artistique</span>
+                    <span>Gestion de projet</span>
+                    <span>Illustration</span>
+                    <span>Édition</span>
+                    <span>Bande dessinée</span>
+                    <span>Marketing</span>
+                    <span>Management</span>
+                    <span>Commerce</span>
+                    <span>Développement produit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="sep">
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Basé à Saint-Orens-de-Gameville, Occitanie.</p>
+        <div class="contact-links">
+            <a href="mailto:contact@miyukini.com">contact@miyukini.com</a>
+            <a href="https://github.com/StudioMiyukini" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/van-jean-nguyen/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://discord.gg/miyukini" target="_blank" rel="noopener">Discord</a>
+            <a href="https://cog.miyukini.com">cog.miyukini.com</a>
+            <a href="https://catakana.fr" target="_blank" rel="noopener">catakana.fr</a>
+        </div>
+    </section>
+
+    <footer>
+        <span>&copy; 2026 Studio Miyukini</span>
     </footer>
 
-    <script src="assets/main.js"></script>
 </body>
 </html>
